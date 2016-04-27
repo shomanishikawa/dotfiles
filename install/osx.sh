@@ -28,13 +28,13 @@ echo "Enable subpixel font rendering on non-Apple LCDs"
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # echo "Enable the 2D Dock"
-# defaults write com.apple.dock no-glass -bool true
+defaults write com.apple.dock no-glass -bool true
 
 # Automatically hide and show the Dock
-# defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool true
 
 # echo "Make Dock icons of hidden applications translucent"
-# defaults write com.apple.dock showhidden -bool true
+defaults write com.apple.dock showhidden -bool true
 
 #echo "Enable iTunes track notifications in the Dock"
 #defaults write com.apple.dock itunes-notifications -bool true
@@ -53,7 +53,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 #defaults write com.apple.finder QuitMenuItem -bool true
 
 # Disable window animations and Get Info animations in Finder
-# defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder DisableAllAnimations -bool true
 
 echo "Use current directory as default search scope in Finder"
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -71,7 +71,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 #defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 #echo "Disable shadow in screenshots"
-#defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # echo "Enable highlight hover effect for the grid view of a stack (Dock)"
 # defaults write com.apple.dock mouse-over-hilte-stack -bool true
@@ -83,7 +83,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # defaults write com.apple.dock show-process-indicators -bool true
 
 # Don’t animate opening applications from the Dock
-# defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock launchanim -bool false
 
 #echo "Display ASCII control characters using caret notation in standard text views"
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -102,7 +102,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 #defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Disable opening and closing window animations
-# defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 # echo "Disable disk image verification"
 # defaults write com.apple.frameworks.diskimages skip-verify -bool true
@@ -143,7 +143,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 #defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 echo "Enable tap to click (Trackpad)"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 #echo "Map bottom right Trackpad corner to right-click"
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -159,7 +159,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 # defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Remove useless icons from Safari’s bookmarks bar
-# defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 # echo "Add a context menu item for showing the Web Inspector in web views"
 # defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
@@ -168,17 +168,17 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 #defaults write com.apple.terminal StringEncodings -array 4
 
 # echo "Disable the Ping sidebar in iTunes"
-# defaults write com.apple.iTunes disablePingSidebar -bool true
+defaults write com.apple.iTunes disablePingSidebar -bool true
 
 # echo "Disable all the other Ping stuff in iTunes"
-# defaults write com.apple.iTunes disablePing -bool true
+defaults write com.apple.iTunes disablePing -bool true
 
 # echo "Make ⌘ + F focus the search input in iTunes"
-# defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
+defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
 # Disable send and reply animations in Mail.app
-# defaults write com.apple.Mail DisableReplyAnimations -bool true
-# defaults write com.apple.Mail DisableSendAnimations -bool true
+defaults write com.apple.Mail DisableReplyAnimations -bool true
+defaults write com.apple.Mail DisableSendAnimations -bool true
 
 # Disable Resume system-wide
 # defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false

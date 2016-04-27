@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-    name = Nick Nisi
-    email = nick@nisi.org
+    name = Shoma Nishikawa
+    email = shoma.nishikawa@gmail.com
 [github]
-    user = nicknisi
+    user = shomanishikawa
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]
@@ -17,7 +17,7 @@
     cob = checkout -b
     s = status --short
     ss  = status
-    br = branch -v
+    br = branch -v -v
 
     l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
@@ -74,7 +74,8 @@
     # add grep
     ag = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs git add --all' -"
     # add all
-    aa = !git ls-files -d | xargs git rm && git ls-files -m -o --exclude-standard | xargs git add
+    # aa = !git ls-files -d | xargs git rm && git ls-files -m -o --exclude-standard | xargs git add
+    aa = add .
     # remove grep - Remove found files that are NOT under version control
     rg = "!sh -c 'git ls-files --others --exclude-standard | grep $1 | xargs rm' -"
 
@@ -86,6 +87,12 @@
     # check out a local copy of a PR. https://gist.github.com/gnarf/5406589
     pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+    # shoma's own
+    p = push
+    cm = commit -m
+    st = status -bs
+    master-blaster = !sh -c 'git branch | grep -v master | xargs git branch -D' # blows away all local branches except master
 [color]
     diff = auto
     status = auto
