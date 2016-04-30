@@ -93,6 +93,7 @@
     cm = commit -m
     st = status -bs
     master-blaster = !sh -c 'git branch | grep -v master | xargs git branch -D' # blows away all local branches except master
+    df = diff
 [color]
     diff = auto
     status = auto
