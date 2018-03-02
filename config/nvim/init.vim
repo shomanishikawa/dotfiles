@@ -69,6 +69,8 @@ Plug 'tclem/vim-arduino' " arduino support - compile wihtout needing to open the
 
 " SHOMA PLUGINS
 Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'leafgarland/typescript-vim'
 
 
 call plug#end()

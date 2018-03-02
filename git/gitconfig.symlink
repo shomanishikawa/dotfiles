@@ -18,6 +18,7 @@
     s = status --short
     ss  = status
     br = branch -v -v
+    pheroku = push heroku master
 
     l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
@@ -91,6 +92,7 @@
     # shoma's own
     p = push
     cm = commit -m
+    cmn = commit -m -n
     st = status -bs
     master-blaster = !sh -c 'git branch | grep -v master | xargs git branch -D' # blows away all local branches except master
     df = diff
