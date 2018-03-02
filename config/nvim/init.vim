@@ -122,11 +122,16 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" Airline {{{
 		Plug 'vim-airline/vim-airline'
+		Plug 'airblade/vim-gitgutter'
 		Plug 'vim-airline/vim-airline-themes'
 		let g:airline_powerline_fonts=1
 		let g:airline_left_sep=''
 		let g:airline_right_sep=''
 		let g:airline_theme='base16'
+		let g:airline#extensions#tabline#enabled = 1
+		let g:airline#extensions#tabline#left_sep = ' '
+		let g:airline#extensions#tabline#left_alt_sep = '|'
+		let g:airline#extensions#tabline#buffer_nr_show = 1
 		let g:airline#extensions#tabline#show_splits = 0
 		let g:airline#extensions#whitespace#enabled = 0
 		" enable airline tabline
@@ -143,6 +148,7 @@ call plug#begin('~/.config/nvim/plugged')
 " General Mappings {{{
 	" set a map leader for more key combos
 	let mapleader = ','
+	map ; :
 
 	" remap esc
 	inoremap jk <esc>
@@ -184,14 +190,20 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" switch between current and last buffer
 	nmap <leader>. <c-^>
+	" delete buffer
+	nmap <silent> <leader>d :bp<cr>:bd #<cr>
 
 	" enable . command in visual mode
 	vnoremap . :normal .<cr>
 
-	map <silent> <C-h> :call functions#WinMove('h')<cr>
-	map <silent> <C-j> :call functions#WinMove('j')<cr>
-	map <silent> <C-k> :call functions#WinMove('k')<cr>
-	map <silent> <C-l> :call functions#WinMove('l')<cr>
+	" map <silent> <C-h> :call functions#WinMove('h')<cr>
+	" map <silent> <C-j> :call functions#WinMove('j')<cr>
+	" map <silent> <C-k> :call functions#WinMove('k')<cr>
+	" map <silent> <C-l> :call functions#WinMove('l')<cr>
+	
+	" Move between tabs
+	map <leader>p :bp<CR>
+	map <leader>n :bn<CR>
 
 	map <leader>wc :wincmd q<cr>
 
@@ -313,7 +325,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'sickill/vim-pasta'
 
 	" NERDTree {{{
-		Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+    " Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+    Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
 		Plug 'Xuyuanp/nerdtree-git-plugin'
 		Plug 'ryanoasis/vim-devicons'
 
@@ -413,6 +426,7 @@ call plug#begin('~/.config/nvim/plugged')
 		nmap <leader>ge :Gedit<cr>
 		nmap <silent><leader>gr :Gread<cr>
 		nmap <silent><leader>gb :Gblame<cr>
+		nmap <silent><leader>gd :Gdiff<cr>
 	" }}}
 
 	" ALE {{{
