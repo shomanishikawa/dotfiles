@@ -71,7 +71,16 @@ Plug 'tclem/vim-arduino' " arduino support - compile wihtout needing to open the
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'leafgarland/typescript-vim'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
+let g:prettier#autoformat = 0
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#single_quote = 'true'
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 
 call plug#end()
 
@@ -174,7 +183,7 @@ augroup configgroup
 
     autocmd BufNewFile,BufRead,BufWrite *.md syntax match Comment /\%^---\_.\{-}---$/
 
-    autocmd! BufWritePost * Neomake
+    " autocmd! BufWritePost * Neomake
 augroup END
 
 " }}}
